@@ -117,7 +117,7 @@ const meetChart = computed(() => {
         </p>
         <h1>{{ team }}</h1>
         <p v-if="rank" class="rank-line">
-          <span class="badge" :class="rank <= 3 ? ['gold', 'silver', 'bronze'][rank - 1] : 'neutral'">
+          <span class="badge" :class="rank <= 3 ? ['first', 'second', 'third'][rank - 1] : 'neutral'">
             {{ ordinal(rank) }} of {{ teamStandings.length }}
           </span>
           <span class="muted">in the season standings</span>
@@ -129,7 +129,7 @@ const meetChart = computed(() => {
         <StatTile :value="standing.individual_points.toLocaleString()" label="Individual" />
         <StatTile :value="standing.relay_points.toLocaleString()" label="Relay" />
         <StatTile :value="roster.length" label="Swimmers" />
-        <StatTile :value="teamTotals.wins" label="Age-group wins" :tone="teamTotals.wins ? 'gold' : 'default'" />
+        <StatTile :value="teamTotals.wins" label="Age-group wins" :tone="teamTotals.wins ? 'first' : 'default'" />
         <StatTile
           :value="teamTotals.dropped > 0 ? `−${teamTotals.dropped.toFixed(1)}s` : '—'"
           label="Time dropped"
@@ -177,7 +177,7 @@ const meetChart = computed(() => {
               </td>
               <td class="num">{{ row.races }}</td>
               <td class="num">
-                <span v-if="row.wins" class="badge gold">{{ row.wins }}</span>
+                <span v-if="row.wins" class="badge first">{{ row.wins }}</span>
                 <span v-else class="faint">—</span>
               </td>
               <td class="num">{{ row.podiums || '—' }}</td>

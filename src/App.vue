@@ -61,7 +61,7 @@ onMounted(load)
 }
 
 .error {
-  border-color: #f0c6b8;
+  border-color: var(--loss-edge);
   background: var(--loss-bg);
 }
 

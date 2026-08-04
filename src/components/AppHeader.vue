@@ -22,11 +22,11 @@ watch(() => route.fullPath, () => {
     <div class="shell bar">
       <RouterLink to="/" class="brand">
         <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
-          <rect width="64" height="64" rx="14" fill="#04222c" />
+          <rect width="64" height="64" rx="14" fill="#0a2a46" />
           <g fill="none" stroke-linecap="round" stroke-width="5">
-            <path d="M8 26c6 0 6-5 12-5s6 5 12 5 6-5 12-5 6 5 12 5" stroke="#4ec7d6" />
-            <path d="M8 38c6 0 6-5 12-5s6 5 12 5 6-5 12-5 6 5 12 5" stroke="#17a8bb" />
-            <path d="M8 50c6 0 6-5 12-5s6 5 12 5 6-5 12-5 6 5 12 5" stroke="#0c6a7c" />
+            <path d="M8 26c6 0 6-5 12-5s6 5 12 5 6-5 12-5 6 5 12 5" stroke="#79c4ee" />
+            <path d="M8 38c6 0 6-5 12-5s6 5 12 5 6-5 12-5 6 5 12 5" stroke="#40a5e3" />
+            <path d="M8 50c6 0 6-5 12-5s6 5 12 5 6-5 12-5 6 5 12 5" stroke="#1a72b2" />
           </g>
         </svg>
         <span class="wordmark">NASH<span class="light">Results</span></span>

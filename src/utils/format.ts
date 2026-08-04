@@ -43,11 +43,11 @@ export function splitRankDisplay(rankDisplay: string): string[] {
     .filter(Boolean)
 }
 
-/** 'gold' | 'silver' | 'bronze' for a podium place, otherwise null. */
+/** 'first' | 'second' | 'third' for a podium place, otherwise null. */
 export function podiumClass(place: number | null | undefined): string | null {
-  if (place === 1) return 'gold'
-  if (place === 2) return 'silver'
-  if (place === 3) return 'bronze'
+  if (place === 1) return 'first'
+  if (place === 2) return 'second'
+  if (place === 3) return 'third'
   return null
 }
 

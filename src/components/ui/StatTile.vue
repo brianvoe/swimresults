@@ -3,7 +3,7 @@ defineProps<{
   value: string | number
   label: string
   hint?: string
-  tone?: 'default' | 'gold' | 'gain' | 'accent'
+  tone?: 'default' | 'first' | 'gain' | 'accent'
 }>()
 </script>
 
@@ -32,8 +32,8 @@ defineProps<{
   color: var(--water-900);
 }
 
-.gold .value {
-  color: var(--gold);
+.first .value {
+  color: var(--first);
 }
 .gain .value {
   color: var(--gain);

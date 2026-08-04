@@ -424,7 +424,7 @@ function divisionTone(division: string | undefined) {
 }
 
 .error {
-  border-color: #f0c6b8;
+  border-color: var(--loss-edge);
   background: var(--loss-bg);
   color: var(--loss);
 }

@@ -262,7 +262,7 @@ async function share() {
         <StatTile
           :value="athlete.summary.age_group_wins"
           label="Age-group wins"
-          :tone="athlete.summary.age_group_wins > 0 ? 'gold' : 'default'"
+          :tone="athlete.summary.age_group_wins > 0 ? 'first' : 'default'"
         />
         <StatTile
           :value="`${athlete.summary.age_group_podiums}/${athlete.summary.age_group_races}`"
@@ -306,7 +306,7 @@ async function share() {
           <div class="ev-stats">
             <span v-if="summary.delta > 0" class="badge gain">−{{ summary.delta.toFixed(2) }}s</span>
             <span v-else-if="summary.races > 1" class="badge neutral">no drop</span>
-            <span v-if="summary.wins" class="badge gold">
+            <span v-if="summary.wins" class="badge first">
               {{ summary.wins }} win{{ summary.wins === 1 ? '' : 's' }}
             </span>
             <span v-if="summary.bestOverall" class="badge">

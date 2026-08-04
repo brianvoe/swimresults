@@ -165,7 +165,7 @@ function divisionTone(division: string) {
           v-for="(team, i) in podium"
           :key="team.team"
           class="spot"
-          :class="['gold', 'silver', 'bronze'][i]"
+          :class="['first', 'second', 'third'][i]"
         >
           <RouterLink :to="`/team/${teamSlug(team.team)}`" class="plaque">
             <span class="medal">{{ ['Champions', 'Runner-up', 'Third'][i] }}</span>
@@ -280,7 +280,7 @@ function divisionTone(division: string) {
             <span class="badge solid">Both divisions</span>
             <h3>Championship</h3>
             <p class="venue">{{ championship.venue }}</p>
-            <p v-if="podium[0]" class="meet-winner gold-text">Won by {{ podium[0].team }}</p>
+            <p v-if="podium[0]" class="meet-winner first-text">Won by {{ podium[0].team }}</p>
             <p class="meet-meta num">
               {{ championship.result_count }} results · {{ championship.event_count }} events
             </p>
@@ -449,14 +449,14 @@ function divisionTone(division: string) {
 }
 
 /* Ranks read 1,2,3 in the markup for screen readers; on screen the winner
-   takes the centre plinth with silver left and bronze right. */
-.spot.gold {
+   takes the centre plinth with second left and third right. */
+.spot.first {
   order: 2;
 }
-.spot.silver {
+.spot.second {
   order: 1;
 }
-.spot.bronze {
+.spot.third {
   order: 3;
 }
 
@@ -475,16 +475,16 @@ function divisionTone(division: string) {
   transform: translateY(-2px);
 }
 
-.gold .plaque {
-  border-color: #ecd9a8;
-  background: linear-gradient(180deg, var(--gold-bg) 0%, var(--surface) 55%);
+.first .plaque {
+  border-color: var(--first-edge);
+  background: linear-gradient(180deg, var(--first-bg) 0%, var(--surface) 55%);
   padding-top: 1.35rem;
 }
-.silver .plaque {
-  background: linear-gradient(180deg, var(--silver-bg) 0%, var(--surface) 55%);
+.second .plaque {
+  background: linear-gradient(180deg, var(--second-bg) 0%, var(--surface) 55%);
 }
-.bronze .plaque {
-  background: linear-gradient(180deg, var(--bronze-bg) 0%, var(--surface) 55%);
+.third .plaque {
+  background: linear-gradient(180deg, var(--third-bg) 0%, var(--surface) 55%);
 }
 
 .medal {
@@ -496,14 +496,14 @@ function divisionTone(division: string) {
   color: var(--ink-faint);
 }
 
-.gold .medal {
-  color: #9a7212;
+.first .medal {
+  color: var(--first);
 }
-.silver .medal {
-  color: #6b7684;
+.second .medal {
+  color: var(--second);
 }
-.bronze .medal {
-  color: #96612f;
+.third .medal {
+  color: var(--third);
 }
 
 .team {
@@ -517,7 +517,7 @@ function divisionTone(division: string) {
   color: var(--water-900);
 }
 
-.gold .team {
+.first .team {
   font-size: 1.25rem;
 }
 
@@ -532,7 +532,7 @@ function divisionTone(division: string) {
   color: var(--water-800);
 }
 
-.gold .pts {
+.first .pts {
   font-size: 1.9rem;
   color: var(--water-900);
 }
@@ -557,7 +557,7 @@ function divisionTone(division: string) {
   background: var(--water-500);
 }
 .bar.rel {
-  background: var(--gold);
+  background: var(--relay);
 }
 
 .split-legend {
@@ -580,7 +580,7 @@ function divisionTone(division: string) {
   background: var(--water-500);
 }
 .dot.rel {
-  background: var(--gold);
+  background: var(--relay);
 }
 
 .pedestal {
@@ -590,17 +590,17 @@ function divisionTone(division: string) {
   color: #fff;
 }
 
-.gold .pedestal {
+.first .pedestal {
   height: 74px;
-  background: linear-gradient(180deg, #e0b040 0%, #c8942a 100%);
+  background: linear-gradient(180deg, #2b8ede 0%, #0b5ea8 100%);
 }
-.silver .pedestal {
+.second .pedestal {
   height: 52px;
-  background: linear-gradient(180deg, #b3bcc7 0%, #97a2af 100%);
+  background: linear-gradient(180deg, #6fa3c9 0%, #3d7ba3 100%);
 }
-.bronze .pedestal {
+.third .pedestal {
   height: 38px;
-  background: linear-gradient(180deg, #cf9b6a 0%, #b17c4c 100%);
+  background: linear-gradient(180deg, #9dbdd2 0%, #6b93ad 100%);
 }
 
 .place {
@@ -611,7 +611,7 @@ function divisionTone(division: string) {
   color: rgba(255, 255, 255, 0.95);
 }
 
-.gold .place {
+.first .place {
   font-size: 2rem;
 }
 
@@ -685,7 +685,7 @@ function divisionTone(division: string) {
 
 .is-champ .champs-cell {
   font-weight: 700;
-  color: #9a7212;
+  color: var(--first);
 }
 
 .champ-tag {
@@ -693,8 +693,8 @@ function divisionTone(division: string) {
   margin-left: 0.4rem;
   padding: 0.05rem 0.36rem;
   border-radius: 999px;
-  background: var(--gold-bg);
-  color: #9a7212;
+  background: var(--first-bg);
+  color: var(--first);
   font-size: 0.62rem;
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -735,7 +735,7 @@ function divisionTone(division: string) {
 }
 
 .round-label.finale {
-  color: var(--gold);
+  color: var(--first);
 }
 
 .round-date {
@@ -763,8 +763,8 @@ function divisionTone(division: string) {
   color: var(--water-700);
 }
 
-.meet-winner.gold-text {
-  color: #9a7212;
+.meet-winner.first-text {
+  color: var(--first);
 }
 
 .meet-meta {
@@ -774,8 +774,8 @@ function divisionTone(division: string) {
 }
 
 .champ {
-  background: linear-gradient(160deg, var(--gold-bg) 0%, var(--surface) 60%);
-  border-color: #ecd9a8;
+  background: linear-gradient(160deg, var(--first-bg) 0%, var(--surface) 60%);
+  border-color: var(--first-edge);
   min-height: 100%;
 }
 
@@ -828,7 +828,7 @@ function divisionTone(division: string) {
 }
 
 .lead-rank.top {
-  color: var(--gold);
+  color: var(--first);
 }
 
 .lead-name {
@@ -942,32 +942,32 @@ function divisionTone(division: string) {
 
   /* Stacked, the staggered plinths lose their meaning, so fall back to a
      ranked list with a uniform base strip in 1-2-3 order. */
-  .spot.gold,
-  .spot.silver,
-  .spot.bronze {
+  .spot.first,
+  .spot.second,
+  .spot.third {
     order: 0;
   }
 
-  .gold .plaque {
+  .first .plaque {
     padding-top: 1rem;
   }
 
-  .gold .team {
+  .first .team {
     font-size: 1.1rem;
   }
 
-  .gold .pts {
+  .first .pts {
     font-size: 1.6rem;
   }
 
-  .gold .pedestal,
-  .silver .pedestal,
-  .bronze .pedestal {
+  .first .pedestal,
+  .second .pedestal,
+  .third .pedestal {
     height: 30px;
   }
 
   .place,
-  .gold .place {
+  .first .place {
     font-size: 1.05rem;
   }
 
