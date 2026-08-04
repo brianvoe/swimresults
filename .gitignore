@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+_extract/
+*.pyc
+.DS_Store
+node_modules/
+dist/
+dist-ssr/
+*.local
+logs
+*.log
+npm-debug.log*
+.vscode/*
+!.vscode/extensions.json
+.idea
