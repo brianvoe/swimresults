@@ -1,0 +1,622 @@
+{
+  "meets": [
+    {
+      "id": "meet-1-d1",
+      "short_name": "Meet 1 D1",
+      "division": "D1",
+      "name": "Meet 1 @ Cottonwood",
+      "venue": "Cottonwood",
+      "date": "2026-07-09",
+      "date_display": "Jul 9, 2026",
+      "source_pdf": "pdfs/meet1-d1-cottonwood.pdf",
+      "event_count": 77,
+      "result_count": 466,
+      "team_scores": [
+        {
+          "team": "NAC Grown-Ups",
+          "team_code": "NAC",
+          "individual_points": 1917,
+          "relay_points": 544,
+          "races": 123,
+          "swimmers": 39,
+          "points": 2461
+        },
+        {
+          "team": "7 Hills GrownUps",
+          "team_code": "7H",
+          "individual_points": 1018,
+          "relay_points": 284,
+          "races": 78,
+          "swimmers": 25,
+          "points": 1302
+        },
+        {
+          "team": "Excel Grown-Ups",
+          "team_code": "EGU",
+          "individual_points": 844,
+          "relay_points": 276,
+          "races": 60,
+          "swimmers": 20,
+          "points": 1120
+        },
+        {
+          "team": "Cottonwood",
+          "team_code": "CWOOD",
+          "individual_points": 825,
+          "relay_points": 204,
+          "races": 52,
+          "swimmers": 14,
+          "points": 1029
+        },
+        {
+          "team": "Whitworth",
+          "team_code": "WHIT",
+          "individual_points": 708,
+          "relay_points": 202,
+          "races": 58,
+          "swimmers": 23,
+          "points": 910
+        },
+        {
+          "team": "Richland Gators",
+          "team_code": "RICH",
+          "individual_points": 239,
+          "relay_points": 34,
+          "races": 15,
+          "swimmers": 4,
+          "points": 273
+        },
+        {
+          "team": "Nash Free Agents",
+          "team_code": "FA",
+          "individual_points": 72,
+          "relay_points": 0,
+          "races": 6,
+          "swimmers": 2,
+          "points": 72
+        }
+      ],
+      "file": "data/meets/meet-1-d1.json"
+    },
+    {
+      "id": "meet-1-d2",
+      "short_name": "Meet 1 D2",
+      "division": "D2",
+      "name": "Meet 1 @ JCC",
+      "venue": "JCC",
+      "date": "2026-07-09",
+      "date_display": "Jul 9, 2026",
+      "source_pdf": "pdfs/meet1-d2-jcc.pdf",
+      "event_count": 68,
+      "result_count": 283,
+      "team_scores": [
+        {
+          "team": "Nash River Rats",
+          "team_code": "NRR",
+          "individual_points": 1000,
+          "relay_points": 336,
+          "races": 64,
+          "swimmers": 20,
+          "points": 1336
+        },
+        {
+          "team": "Nash Dolphins",
+          "team_code": "NASH",
+          "individual_points": 955,
+          "relay_points": 216,
+          "races": 62,
+          "swimmers": 18,
+          "points": 1171
+        },
+        {
+          "team": "Ensworth Aquatic",
+          "team_code": "ENS",
+          "individual_points": 803,
+          "relay_points": 224,
+          "races": 47,
+          "swimmers": 14,
+          "points": 1027
+        },
+        {
+          "team": "BSTC",
+          "team_code": "BSTC",
+          "individual_points": 505,
+          "relay_points": 80,
+          "races": 28,
+          "swimmers": 8,
+          "points": 585
+        },
+        {
+          "team": "Wave Brakers",
+          "team_code": "WB",
+          "individual_points": 292,
+          "relay_points": 114,
+          "races": 22,
+          "swimmers": 10,
+          "points": 406
+        },
+        {
+          "team": "Sour Scandinavia",
+          "team_code": "SSS",
+          "individual_points": 170,
+          "relay_points": 28,
+          "races": 13,
+          "swimmers": 5,
+          "points": 198
+        },
+        {
+          "team": "JCC Grown-Ups",
+          "team_code": "JCC",
+          "individual_points": 116,
+          "relay_points": 0,
+          "races": 8,
+          "swimmers": 3,
+          "points": 116
+        },
+        {
+          "team": "Lifetime Masters",
+          "team_code": "LIFE",
+          "individual_points": 29,
+          "relay_points": 0,
+          "races": 3,
+          "swimmers": 1,
+          "points": 29
+        }
+      ],
+      "file": "data/meets/meet-1-d2.json"
+    },
+    {
+      "id": "meet-2-d1",
+      "short_name": "Meet 2 D1",
+      "division": "D1",
+      "name": "Meet 2 @ 7 Hills",
+      "venue": "7 Hills",
+      "date": "2026-07-16",
+      "date_display": "Jul 16, 2026",
+      "source_pdf": "pdfs/meet2-d1-7hills.pdf",
+      "event_count": 77,
+      "result_count": 482,
+      "team_scores": [
+        {
+          "team": "NAC Grown-Ups",
+          "team_code": "NAC",
+          "individual_points": 1810,
+          "relay_points": 536,
+          "races": 120,
+          "swimmers": 41,
+          "points": 2346
+        },
+        {
+          "team": "7 Hills GrownUps",
+          "team_code": "7H",
+          "individual_points": 1050,
+          "relay_points": 302,
+          "races": 82,
+          "swimmers": 26,
+          "points": 1352
+        },
+        {
+          "team": "Excel Grown-Ups",
+          "team_code": "EGU",
+          "individual_points": 915,
+          "relay_points": 290,
+          "races": 60,
+          "swimmers": 17,
+          "points": 1205
+        },
+        {
+          "team": "Whitworth",
+          "team_code": "WHIT",
+          "individual_points": 893,
+          "relay_points": 306,
+          "races": 73,
+          "swimmers": 27,
+          "points": 1199
+        },
+        {
+          "team": "Cottonwood",
+          "team_code": "CWOOD",
+          "individual_points": 870,
+          "relay_points": 196,
+          "races": 53,
+          "swimmers": 15,
+          "points": 1066
+        },
+        {
+          "team": "Richland Gators",
+          "team_code": "RICH",
+          "individual_points": 99,
+          "relay_points": 0,
+          "races": 8,
+          "swimmers": 4,
+          "points": 99
+        },
+        {
+          "team": "Nash Free Agents",
+          "team_code": "FA",
+          "individual_points": 53,
+          "relay_points": 0,
+          "races": 5,
+          "swimmers": 2,
+          "points": 53
+        }
+      ],
+      "file": "data/meets/meet-2-d1.json"
+    },
+    {
+      "id": "meet-2-d2",
+      "short_name": "Meet 2 D2",
+      "division": "D2",
+      "name": "Meet 2 @ Westhaven",
+      "venue": "Westhaven",
+      "date": "2026-07-16",
+      "date_display": "Jul 16, 2026",
+      "source_pdf": "pdfs/meet2-d2-westhaven.pdf",
+      "event_count": 63,
+      "result_count": 257,
+      "team_scores": [
+        {
+          "team": "Nash Dolphins",
+          "team_code": "NASH",
+          "individual_points": 1082,
+          "relay_points": 268,
+          "races": 68,
+          "swimmers": 18,
+          "points": 1350
+        },
+        {
+          "team": "Nash River Rats",
+          "team_code": "NRR",
+          "individual_points": 899,
+          "relay_points": 256,
+          "races": 57,
+          "swimmers": 22,
+          "points": 1155
+        },
+        {
+          "team": "Ensworth Aquatic",
+          "team_code": "ENS",
+          "individual_points": 510,
+          "relay_points": 136,
+          "races": 29,
+          "swimmers": 9,
+          "points": 646
+        },
+        {
+          "team": "BSTC",
+          "team_code": "BSTC",
+          "individual_points": 418,
+          "relay_points": 74,
+          "races": 23,
+          "swimmers": 6,
+          "points": 492
+        },
+        {
+          "team": "Wave Brakers",
+          "team_code": "WB",
+          "individual_points": 220,
+          "relay_points": 60,
+          "races": 15,
+          "swimmers": 6,
+          "points": 280
+        },
+        {
+          "team": "Sour Scandinavia",
+          "team_code": "SSS",
+          "individual_points": 172,
+          "relay_points": 64,
+          "races": 13,
+          "swimmers": 5,
+          "points": 236
+        },
+        {
+          "team": "JCC Grown-Ups",
+          "team_code": "JCC",
+          "individual_points": 48,
+          "relay_points": 0,
+          "races": 3,
+          "swimmers": 3,
+          "points": 48
+        }
+      ],
+      "file": "data/meets/meet-2-d2.json"
+    },
+    {
+      "id": "meet-3-d1",
+      "short_name": "Meet 3 D1",
+      "division": "D1",
+      "name": "Meet 3 @ Richland",
+      "venue": "Richland",
+      "date": "2026-07-23",
+      "date_display": "Jul 23, 2026",
+      "source_pdf": "pdfs/meet3-d1-richland.pdf",
+      "event_count": 77,
+      "result_count": 523,
+      "team_scores": [
+        {
+          "team": "NAC Grown-Ups",
+          "team_code": "NAC",
+          "individual_points": 1867,
+          "relay_points": 510,
+          "races": 134,
+          "swimmers": 47,
+          "points": 2377
+        },
+        {
+          "team": "Excel Grown-Ups",
+          "team_code": "EGU",
+          "individual_points": 1168,
+          "relay_points": 394,
+          "races": 83,
+          "swimmers": 24,
+          "points": 1562
+        },
+        {
+          "team": "7 Hills GrownUps",
+          "team_code": "7H",
+          "individual_points": 1093,
+          "relay_points": 252,
+          "races": 84,
+          "swimmers": 27,
+          "points": 1345
+        },
+        {
+          "team": "Cottonwood",
+          "team_code": "CWOOD",
+          "individual_points": 811,
+          "relay_points": 196,
+          "races": 49,
+          "swimmers": 15,
+          "points": 1007
+        },
+        {
+          "team": "Whitworth",
+          "team_code": "WHIT",
+          "individual_points": 523,
+          "relay_points": 174,
+          "races": 44,
+          "swimmers": 17,
+          "points": 697
+        },
+        {
+          "team": "Richland Gators",
+          "team_code": "RICH",
+          "individual_points": 346,
+          "relay_points": 62,
+          "races": 25,
+          "swimmers": 7,
+          "points": 408
+        }
+      ],
+      "file": "data/meets/meet-3-d1.json"
+    },
+    {
+      "id": "meet-3-d2",
+      "short_name": "Meet 3 D2",
+      "division": "D2",
+      "name": "Meet 3 @ BSTC",
+      "venue": "BSTC",
+      "date": "2026-07-23",
+      "date_display": "Jul 23, 2026",
+      "source_pdf": "pdfs/meet3-d2-bstc.pdf",
+      "event_count": 66,
+      "result_count": 295,
+      "team_scores": [
+        {
+          "team": "Nash River Rats",
+          "team_code": "NRR",
+          "individual_points": 976,
+          "relay_points": 246,
+          "races": 59,
+          "swimmers": 22,
+          "points": 1222
+        },
+        {
+          "team": "Nash Dolphins",
+          "team_code": "NASH",
+          "individual_points": 859,
+          "relay_points": 194,
+          "races": 60,
+          "swimmers": 16,
+          "points": 1053
+        },
+        {
+          "team": "Ensworth Aquatic",
+          "team_code": "ENS",
+          "individual_points": 815,
+          "relay_points": 208,
+          "races": 48,
+          "swimmers": 13,
+          "points": 1023
+        },
+        {
+          "team": "BSTC",
+          "team_code": "BSTC",
+          "individual_points": 623,
+          "relay_points": 148,
+          "races": 35,
+          "swimmers": 10,
+          "points": 771
+        },
+        {
+          "team": "Wave Brakers",
+          "team_code": "WB",
+          "individual_points": 233,
+          "relay_points": 130,
+          "races": 17,
+          "swimmers": 10,
+          "points": 363
+        },
+        {
+          "team": "Sour Scandinavia",
+          "team_code": "SSS",
+          "individual_points": 183,
+          "relay_points": 58,
+          "races": 15,
+          "swimmers": 6,
+          "points": 241
+        },
+        {
+          "team": "JCC Grown-Ups",
+          "team_code": "JCC",
+          "individual_points": 139,
+          "relay_points": 0,
+          "races": 10,
+          "swimmers": 3,
+          "points": 139
+        },
+        {
+          "team": "Lifetime Masters",
+          "team_code": "LIFE",
+          "individual_points": 60,
+          "relay_points": 0,
+          "races": 4,
+          "swimmers": 1,
+          "points": 60
+        },
+        {
+          "team": "Nash Free Agents",
+          "team_code": "FA",
+          "individual_points": 0,
+          "relay_points": 0,
+          "races": 0,
+          "swimmers": 1,
+          "points": 0
+        }
+      ],
+      "file": "data/meets/meet-3-d2.json"
+    },
+    {
+      "id": "championship",
+      "short_name": "Championship",
+      "division": "Combined",
+      "name": "Championship of the World @ Williamson ISC",
+      "venue": "Williamson ISC",
+      "date": "2026-08-01",
+      "date_display": "Aug 1, 2026",
+      "source_pdf": "pdfs/championship-williamson.pdf",
+      "event_count": 79,
+      "result_count": 631,
+      "team_scores": [
+        {
+          "team": "Excel Grown-Ups",
+          "team_code": "EGU",
+          "individual_points": 1271,
+          "relay_points": 372,
+          "races": 86,
+          "swimmers": 24,
+          "points": 1643
+        },
+        {
+          "team": "NAC Grown-Ups",
+          "team_code": "NAC",
+          "individual_points": 1261,
+          "relay_points": 350,
+          "races": 96,
+          "swimmers": 29,
+          "points": 1611
+        },
+        {
+          "team": "7 Hills GrownUps",
+          "team_code": "7H",
+          "individual_points": 893,
+          "relay_points": 234,
+          "races": 71,
+          "swimmers": 20,
+          "points": 1127
+        },
+        {
+          "team": "Nash River Rats",
+          "team_code": "NRR",
+          "individual_points": 681,
+          "relay_points": 256,
+          "races": 52,
+          "swimmers": 16,
+          "points": 937
+        },
+        {
+          "team": "Cottonwood",
+          "team_code": "CWOOD",
+          "individual_points": 725,
+          "relay_points": 94,
+          "races": 46,
+          "swimmers": 14,
+          "points": 819
+        },
+        {
+          "team": "Ensworth Aquatic",
+          "team_code": "ENS",
+          "individual_points": 648,
+          "relay_points": 168,
+          "races": 45,
+          "swimmers": 12,
+          "points": 816
+        },
+        {
+          "team": "Nash Dolphins",
+          "team_code": "NASH",
+          "individual_points": 584,
+          "relay_points": 48,
+          "races": 45,
+          "swimmers": 17,
+          "points": 632
+        },
+        {
+          "team": "Whitworth",
+          "team_code": "WHIT",
+          "individual_points": 468,
+          "relay_points": 104,
+          "races": 33,
+          "swimmers": 10,
+          "points": 572
+        },
+        {
+          "team": "BSTC",
+          "team_code": "BSTC",
+          "individual_points": 240,
+          "relay_points": 66,
+          "races": 14,
+          "swimmers": 5,
+          "points": 306
+        },
+        {
+          "team": "Richland Gators",
+          "team_code": "RICH",
+          "individual_points": 192,
+          "relay_points": 32,
+          "races": 15,
+          "swimmers": 4,
+          "points": 224
+        },
+        {
+          "team": "Wave Brakers",
+          "team_code": "WB",
+          "individual_points": 169,
+          "relay_points": 24,
+          "races": 16,
+          "swimmers": 6,
+          "points": 193
+        },
+        {
+          "team": "Sour Scandinavia",
+          "team_code": "SSS",
+          "individual_points": 90,
+          "relay_points": 28,
+          "races": 11,
+          "swimmers": 4,
+          "points": 118
+        },
+        {
+          "team": "Unattached",
+          "team_code": "UNA",
+          "individual_points": 53,
+          "relay_points": 0,
+          "races": 4,
+          "swimmers": 2,
+          "points": 53
+        }
+      ],
+      "file": "data/meets/championship.json"
+    }
+  ]
+}

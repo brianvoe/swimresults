@@ -42,9 +42,10 @@ async function load() {
     loading.value = true
     error.value = null
     try {
+      const base = import.meta.env.BASE_URL
       const [meetsIndex, athletesIndex] = await Promise.all([
-        fetchJson<MeetsIndex>('/data/meets.json'),
-        fetchJson<AthletesIndex>('/data/athletes.json'),
+        fetchJson<MeetsIndex>(`${base}data/meets.json`),
+        fetchJson<AthletesIndex>(`${base}data/athletes.json`),
       ])
       meets.value = [...meetsIndex.meets].sort((a, b) => a.date.localeCompare(b.date))
       athletes.value = athletesIndex.athletes
@@ -67,7 +68,9 @@ async function loadMeetDetail(id: string): Promise<MeetDetail> {
   const inflight = meetDetailPromises.get(id)
   if (inflight) return inflight
 
-  const promise = fetchJson<MeetDetail>(`/data/meets/${id}.json`).then((detail) => {
+  const promise = fetchJson<MeetDetail>(
+    `${import.meta.env.BASE_URL}data/meets/${id}.json`,
+  ).then((detail) => {
     meetDetails.value = { ...meetDetails.value, [id]: detail }
     meetDetailPromises.delete(id)
     return detail

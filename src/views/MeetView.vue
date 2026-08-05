@@ -144,7 +144,9 @@ const individualResults = (event: MeetEvent) =>
 const relayResults = (event: MeetEvent) =>
   event.results.filter((r): r is MeetRelayResult => isRelayResult(r))
 
-const pdfHref = computed(() => (info.value ? `/${info.value.source_pdf}` : null))
+const pdfHref = computed(() =>
+  info.value ? `${import.meta.env.BASE_URL}${info.value.source_pdf}` : null,
+)
 
 /** The venue already has its own line, so drop the "@ Venue" suffix from the title. */
 const title = computed(() => info.value?.name.replace(/\s*@\s*.+$/, '') ?? '')
