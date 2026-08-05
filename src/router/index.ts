@@ -53,7 +53,20 @@ export const router = createRouter({
   },
 })
 
-router.afterEach((to) => {
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void
+  }
+}
+
+router.afterEach((to, from) => {
   const title = to.meta.title as string | undefined
   if (title) document.title = title
+
+  // Initial load is already counted by the gtag config in index.html.
+  if (from.name == null || typeof window.gtag !== 'function') return
+  window.gtag('config', 'G-FVH0EHB8ND', {
+    page_path: to.fullPath,
+    page_title: document.title,
+  })
 })
