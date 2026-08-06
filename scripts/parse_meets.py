@@ -97,48 +97,58 @@ BLOCK_MERGE: set[tuple[str, str]] = {
     ("tomsic|zach", "tomsick|zachary"),
 }
 
+# course: SCY = 25-yard short course, SCM = 25-meter short course.
+# PDFs label every event in yards; real pool length was confirmed from venue
+# docs (7 Hills) plus same-swimmer time gaps (~12–14% slower at meter pools).
 MEET_FILES = [
     {
         "id": "meet-1-d1",
         "pdf": "meet1-d1-cottonwood.pdf",
         "short_name": "Meet 1 D1",
         "division": "D1",
+        "course": "SCY",
     },
     {
         "id": "meet-1-d2",
         "pdf": "meet1-d2-jcc.pdf",
         "short_name": "Meet 1 D2",
         "division": "D2",
+        "course": "SCM",
     },
     {
         "id": "meet-2-d1",
         "pdf": "meet2-d1-7hills.pdf",
         "short_name": "Meet 2 D1",
         "division": "D1",
+        "course": "SCM",
     },
     {
         "id": "meet-2-d2",
         "pdf": "meet2-d2-westhaven.pdf",
         "short_name": "Meet 2 D2",
         "division": "D2",
+        "course": "SCY",
     },
     {
         "id": "meet-3-d1",
         "pdf": "meet3-d1-richland.pdf",
         "short_name": "Meet 3 D1",
         "division": "D1",
+        "course": "SCY",
     },
     {
         "id": "meet-3-d2",
         "pdf": "meet3-d2-bstc.pdf",
         "short_name": "Meet 3 D2",
         "division": "D2",
+        "course": "SCM",
     },
     {
         "id": "championship",
         "pdf": "championship-williamson.pdf",
         "short_name": "Championship",
         "division": "Combined",
+        "course": "SCY",
     },
 ]
 
@@ -179,6 +189,7 @@ class MeetMeta:
     short_name: str
     pdf: str
     division: str
+    course: str
     name: str
     venue: str
     date: str
@@ -227,6 +238,7 @@ def parse_meet_header(text: str, meta: dict) -> MeetMeta:
         short_name=meta["short_name"],
         pdf=meta["pdf"],
         division=meta["division"],
+        course=meta["course"],
         name=name,
         venue=venue,
         date=date,
@@ -865,6 +877,7 @@ def parse_meet(meta: dict) -> dict:
         "id": meet.id,
         "short_name": meet.short_name,
         "division": meet.division,
+        "course": meet.course,
         "name": meet.name,
         "venue": meet.venue,
         "date": meet.date,
@@ -1339,6 +1352,7 @@ def main() -> int:
                 "id": m["id"],
                 "short_name": m["short_name"],
                 "division": m["division"],
+                "course": m["course"],
                 "name": m["name"],
                 "venue": m["venue"],
                 "date": m["date"],

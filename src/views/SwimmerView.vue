@@ -19,6 +19,7 @@ import Sparkline from '../components/ui/Sparkline.vue'
 import EmptyState from '../components/ui/EmptyState.vue'
 import SegmentedControl from '../components/ui/SegmentedControl.vue'
 import SuspectTimeMark from '../components/ui/SuspectTimeMark.vue'
+import CourseBadge from '../components/ui/CourseBadge.vue'
 
 const route = useRoute()
 const { findAthlete, meets, loaded } = useSwimData()
@@ -64,6 +65,19 @@ function cellFor(meet: string, event: string) {
 }
 
 const meetIdFor = (name: string) => meets.value.find((m) => m.short_name === name)?.id
+const meetCourse = (name: string) => meets.value.find((m) => m.short_name === name)?.course
+const racedMeterPool = computed(() => meetNames.value.some((name) => meetCourse(name) === 'SCM'))
+
+/** Chart labels include course so a jump at a meter meet is obvious. */
+const meetAxisLabels = computed(() =>
+  meetNames.value.map((name) => {
+    const course = meetCourse(name)
+    const short = shortMeet(name)
+    if (course === 'SCM') return `${short} · m`
+    if (course === 'SCY') return `${short} · y`
+    return short
+  }),
+)
 
 /* ---------------------------------------------------------------- charts */
 
@@ -114,7 +128,7 @@ const timeChart = computed(() => {
       ...legendStyle,
     },
     grid: { left: 4, right: 14, top: 34, bottom: 0, containLabel: true },
-    xAxis: categoryAxis(meetNames.value.map(shortMeet)),
+    xAxis: categoryAxis(meetAxisLabels.value),
     yAxis: {
       ...valueAxis(),
       scale: true,
@@ -169,7 +183,7 @@ const placeChart = computed(() => {
     tooltip: { trigger: 'axis' as const, ...tooltipStyle },
     legend: { top: 0, ...legendStyle },
     grid: { left: 4, right: 14, top: 34, bottom: 0, containLabel: true },
-    xAxis: categoryAxis(meetNames.value.map(shortMeet)),
+    xAxis: categoryAxis(meetAxisLabels.value),
     yAxis: { ...valueAxis(), inverse: true, min: 1 },
     series: [
       {
@@ -322,7 +336,9 @@ async function share() {
     <section>
       <SectionHead
         title="Race by race"
-        sub="Official age-group placing on top, placing against the whole field underneath."
+        :sub="racedMeterPool
+          ? 'Official age-group placing on top, placing against the whole field underneath. Amber 25m columns are meter pools — times there run longer than yard pools.'
+          : 'Official age-group placing on top, placing against the whole field underneath.'"
       />
 
       <div class="card table-scroll grid-wrap">
@@ -331,10 +347,13 @@ async function share() {
             <tr>
               <th class="sticky-col">Event</th>
               <th v-for="meet in meetNames" :key="meet">
-                <RouterLink v-if="meetIdFor(meet)" :to="`/meet/${meetIdFor(meet)}`" class="meet-head">
-                  {{ shortMeet(meet) }}
-                </RouterLink>
-                <span v-else>{{ shortMeet(meet) }}</span>
+                <div class="meet-col">
+                  <RouterLink v-if="meetIdFor(meet)" :to="`/meet/${meetIdFor(meet)}`" class="meet-head">
+                    {{ shortMeet(meet) }}
+                  </RouterLink>
+                  <span v-else>{{ shortMeet(meet) }}</span>
+                  <CourseBadge v-if="meetCourse(meet)" :course="meetCourse(meet)!" compact />
+                </div>
               </th>
             </tr>
           </thead>
@@ -413,9 +432,12 @@ async function share() {
       <div>
         <SectionHead
           title="Time progression"
-          :sub="timeMode === 'relative'
+          :sub="(timeMode === 'relative'
             ? 'Each event as a percentage off its first swim, so short and long races compare directly. Below the dashed line is faster.'
-            : 'Raw times in seconds. A line heading down means getting faster.'"
+            : 'Raw times in seconds. A line heading down means getting faster.')
+            + (racedMeterPool
+              ? ' Meets tagged · m are 25-meter pools — jumps there are usually the longer course, not a fade.'
+              : '')"
         >
           <template #actions>
             <SegmentedControl
@@ -615,6 +637,13 @@ async function share() {
   font-weight: 600;
   color: var(--water-800);
   text-align: left;
+}
+
+.meet-col {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
 }
 
 .meet-head {

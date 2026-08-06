@@ -69,6 +69,20 @@ export function shortMeet(meet: string): string {
   return meet.replace(/^Meet\s+/, 'M').replace('Championship', 'Champs')
 }
 
+/** Human label for a meet course code. */
+export function courseLabel(course: string | null | undefined): string {
+  if (course === 'SCM') return 'Meters'
+  if (course === 'SCY') return 'Yards'
+  return '—'
+}
+
+/** Longer explanation for tooltips and meet pages. */
+export function courseDetail(course: string | null | undefined): string {
+  if (course === 'SCM') return '25-meter pool (short course meters)'
+  if (course === 'SCY') return '25-yard pool (short course yards)'
+  return 'Pool length unknown'
+}
+
 export function pluralize(n: number, word: string, plural = `${word}s`): string {
   return `${n} ${n === 1 ? word : plural}`
 }

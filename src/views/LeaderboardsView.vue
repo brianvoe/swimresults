@@ -9,6 +9,7 @@ import SectionHead from '../components/ui/SectionHead.vue'
 import PlaceBadge from '../components/ui/PlaceBadge.vue'
 import EmptyState from '../components/ui/EmptyState.vue'
 import SegmentedControl from '../components/ui/SegmentedControl.vue'
+import CourseBadge from '../components/ui/CourseBadge.vue'
 
 const route = useRoute()
 const router = useRouter()
@@ -51,6 +52,7 @@ const rows = computed(() =>
 )
 
 const meetIdFor = (name: string) => meets.value.find((m) => m.short_name === name)?.id
+const meetCourse = (name: string) => meets.value.find((m) => m.short_name === name)?.course
 
 const gapToLeader = (seconds: number) => {
   if (!rows.value.length) return ''
@@ -63,7 +65,7 @@ const gapToLeader = (seconds: number) => {
   <div class="shell stack rise-in">
     <SectionHead
       title="Leaderboards"
-      sub="Every swimmer's fastest time of the season in one event, ranked against the whole league."
+      sub="Every swimmer's fastest time of the season in one event, ranked against the whole league. Yard-pool times usually lead — JCC, 7 Hills, and BSTC are longer 25-meter courses."
     />
 
     <div class="controls card card-pad">
@@ -145,7 +147,7 @@ const gapToLeader = (seconds: number) => {
             <td class="faint">{{ row.ageGroup }}</td>
             <td class="num time strong">{{ row.time }}</td>
             <td class="num faint">{{ gapToLeader(row.timeSeconds) }}</td>
-            <td>
+            <td class="set-at">
               <RouterLink
                 v-if="meetIdFor(row.meet)"
                 :to="`/meet/${meetIdFor(row.meet)}`"
@@ -154,6 +156,7 @@ const gapToLeader = (seconds: number) => {
                 {{ row.meet }}
               </RouterLink>
               <span v-else>{{ row.meet }}</span>
+              <CourseBadge v-if="meetCourse(row.meet)" :course="meetCourse(row.meet)!" compact />
             </td>
           </tr>
         </tbody>
@@ -230,6 +233,13 @@ const gapToLeader = (seconds: number) => {
 
 .soft-link {
   color: var(--ink-soft);
+}
+
+.set-at {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
 }
 
 .strong {

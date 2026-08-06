@@ -1,7 +1,12 @@
+/** Short-course yards (25y) or short-course meters (25m). */
+export type Course = 'SCY' | 'SCM'
+
 export interface MeetInfo {
   id: string
   short_name: string
   division: 'D1' | 'D2' | 'Combined'
+  /** Real pool length — PDFs label every event in yards either way. */
+  course: Course
   name: string
   venue: string
   date: string

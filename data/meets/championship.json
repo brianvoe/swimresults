@@ -2,6 +2,7 @@
   "id": "championship",
   "short_name": "Championship",
   "division": "Combined",
+  "course": "SCY",
   "name": "Championship of the World @ Williamson ISC",
   "venue": "Williamson ISC",
   "date": "2026-08-01",

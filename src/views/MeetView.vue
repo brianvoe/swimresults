@@ -4,7 +4,7 @@ import { RouterLink, useRoute } from 'vue-router'
 import { useSwimData } from '../composables/useSwimData'
 import { isRelayResult, meetStats, meetTeamScores } from '../utils/aggregates'
 import type { MeetDetail, MeetEvent, MeetEventResult, MeetRelayResult } from '../types/swim'
-import { ordinal, shortEvent } from '../utils/format'
+import { courseDetail, ordinal, shortEvent } from '../utils/format'
 import { athleteSlug, teamSlug } from '../utils/slug'
 import SectionHead from '../components/ui/SectionHead.vue'
 import StatTile from '../components/ui/StatTile.vue'
@@ -12,6 +12,7 @@ import PlaceBadge from '../components/ui/PlaceBadge.vue'
 import EmptyState from '../components/ui/EmptyState.vue'
 import SegmentedControl from '../components/ui/SegmentedControl.vue'
 import SuspectTimeMark from '../components/ui/SuspectTimeMark.vue'
+import CourseBadge from '../components/ui/CourseBadge.vue'
 
 const route = useRoute()
 const { findMeet, loadMeetDetail, loaded } = useSwimData()
@@ -177,7 +178,17 @@ function divisionTone(division: string | undefined) {
           <span class="badge" :class="divisionTone(info.division)">
             {{ info.division === 'Combined' ? 'Both divisions' : `Division ${info.division.slice(1)}` }}
           </span>
+          <CourseBadge :course="info.course" />
           <span class="venue">{{ info.venue }}</span>
+        </p>
+        <p class="course-note">
+          {{ courseDetail(info.course) }}.
+          <template v-if="info.course === 'SCM'">
+            Expect times here about 10–15% slower than the same race in a yard pool.
+          </template>
+          <template v-else>
+            Yard-pool times are the shorter course for this season’s dual meets.
+          </template>
         </p>
         <div class="hero-actions">
           <a v-if="pdfHref" :href="pdfHref" target="_blank" rel="noopener" class="btn">
@@ -401,6 +412,14 @@ function divisionTone(division: string | undefined) {
 .venue {
   font-size: 0.85rem;
   color: var(--ink-soft);
+}
+
+.course-note {
+  margin-top: 0.65rem;
+  max-width: 36rem;
+  font-size: 0.875rem;
+  color: var(--ink-soft);
+  line-height: 1.45;
 }
 
 .hero-actions {

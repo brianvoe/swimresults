@@ -10,6 +10,7 @@ import BaseChart from '../components/charts/BaseChart.vue'
 import GlobalSearch from '../components/GlobalSearch.vue'
 import SectionHead from '../components/ui/SectionHead.vue'
 import SegmentedControl from '../components/ui/SegmentedControl.vue'
+import CourseBadge from '../components/ui/CourseBadge.vue'
 
 const { meets, athletes, stats, teamStandings, leaderCategories, seasonLabel } = useSwimData()
 
@@ -115,6 +116,8 @@ function divisionTone(division: string) {
   if (division === 'Combined') return 'solid'
   return ''
 }
+
+const meetCourse = (name: string) => meets.value.find((m) => m.short_name === name)?.course
 </script>
 
 <template>
@@ -244,7 +247,7 @@ function divisionTone(division: string) {
     <section>
       <SectionHead
         title="The season"
-        sub="Divisions raced separately for Meets 1–3, then everyone met at the Championship."
+        sub="Divisions raced separately for Meets 1–3, then everyone met at the Championship. Host pools mixed 25-yard and 25-meter courses — meter pools run about 10–15% slower for the same race."
       />
       <div class="timeline">
         <div v-for="round in rounds" :key="round.date" class="round">
@@ -260,6 +263,7 @@ function divisionTone(division: string) {
           >
             <div class="meet-top">
               <span class="badge" :class="divisionTone(meet.division)">{{ meet.division }}</span>
+              <CourseBadge :course="meet.course" compact />
               <span class="venue">{{ meet.venue }}</span>
             </div>
             <p v-if="meet.team_scores[0]" class="meet-winner">
@@ -277,7 +281,10 @@ function divisionTone(division: string) {
             <span class="round-date">{{ championship.date_display }}</span>
           </p>
           <RouterLink :to="`/meet/${championship.id}`" class="card card-pad card-link champ">
-            <span class="badge solid">Both divisions</span>
+            <div class="meet-top">
+              <span class="badge solid">Both divisions</span>
+              <CourseBadge :course="championship.course" compact />
+            </div>
             <h3>Championship</h3>
             <p class="venue">{{ championship.venue }}</p>
             <p v-if="podium[0]" class="meet-winner first-text">Won by {{ podium[0].team }}</p>
@@ -321,7 +328,7 @@ function divisionTone(division: string) {
     <section>
       <SectionHead
         title="Fastest swim of the season"
-        sub="The quickest time recorded in each event by anyone in the league."
+        sub="The quickest time recorded in each event by anyone in the league. Yard-pool swims usually win these — meter pools are a longer course."
       >
         <template #actions>
           <RouterLink to="/leaderboards" class="btn">All leaderboards</RouterLink>
@@ -338,7 +345,10 @@ function divisionTone(division: string) {
           <p class="swim-event">{{ shortEvent(swim.eventKey) }}</p>
           <p class="swim-time num">{{ swim.time }}</p>
           <p class="swim-who">{{ swim.name }}</p>
-          <p class="swim-meta">{{ swim.team }} · {{ swim.meet }}</p>
+          <p class="swim-meta">
+            <span>{{ swim.team }} · {{ swim.meet }}</span>
+            <CourseBadge v-if="meetCourse(swim.meet)" :course="meetCourse(swim.meet)!" compact />
+          </p>
         </RouterLink>
       </div>
     </section>
@@ -900,6 +910,10 @@ function divisionTone(division: string) {
 }
 
 .swim-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-wrap: wrap;
   font-size: 0.72rem;
   color: var(--ink-faint);
   margin-top: 0.1rem;

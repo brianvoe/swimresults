@@ -54,7 +54,7 @@ const haystack = computed<Hit[]>(() => {
     id: `m:${m.id}`,
     kind: 'meet',
     label: m.short_name,
-    detail: `${m.venue} · ${m.date_display}`,
+    detail: `${m.venue} · ${m.date_display} · ${m.course === 'SCM' ? '25m' : '25y'}`,
     to: `/meet/${m.id}`,
   }))
 
